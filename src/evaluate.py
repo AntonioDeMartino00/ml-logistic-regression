@@ -10,13 +10,13 @@ def make_predictions(model, X_test):
 
 
 def display_model_coefficients(model, X_train):
-    coefficients = pd.DataFrame(model.coef_.flatten(), X_train.columns, columns=['Koeffizient'])
+    coefficients = pd.DataFrame(model.coef_.flatten(), X_train.columns, columns=['coefficient'])
     print(coefficients)
     return coefficients
 
 
 def compare_actual_vs_predicted(y_test, y_pred):
-    comparison = pd.DataFrame({'Tatsächliche Werte': y_test, 'Vorhersagen': y_pred})
+    comparison = pd.DataFrame({'test_values': y_test, 'predict_values': y_pred})
     print(comparison)
     return comparison
 
@@ -41,7 +41,7 @@ def evaluate_classification_metrics(y_test, y_pred):
 
 def evaluate_confusion_matrix(y_test, y_pred):
     conf_matrix = confusion_matrix(y_test, y_pred)
-    print("Confusion Matrix:\n", conf_matrix)
+    print("confusion matrix:\n", conf_matrix)
     return conf_matrix
 
 
